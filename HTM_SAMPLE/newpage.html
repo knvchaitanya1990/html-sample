@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/sample.js"></script>
+<style>
+@import url("http://127.0.0.1:5500/css/defaultstyle.css");
+body {font-family: Arial;}
+</style>
+</head>
+<body onload="myFunction()">
+<button type="button" id="tab_button">Tabs Display</button>
+
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
+<div id="container" >
+<div id="tab">
+  <button class="tablinks" onclick="openCity(event, 'details')">Details</button>
+  <button class="tablinks" onclick="openCity(event, 'Height')">Height</button>
+  <button class="tablinks" onclick="openCity(event, 'Trigonametry')">Trigonametry</button>
+</div>
+
+<div id="sub_tabs">
+<div id="details" class="tabcontent">
+  <h3>Details</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Height" class="tabcontent">
+  <h3>Height</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Trigonametry" class="tabcontent">
+  <h3>Trigonametry</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+</div>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("sub_tabs").style.display = true
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function myFunction() {
+alert("Onload function !");
+document.getElementById("container").style.display = "none";
+}
+</script>
+   
+</body>
+</html> 
