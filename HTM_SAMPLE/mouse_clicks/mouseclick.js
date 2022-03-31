@@ -6,4 +6,7 @@ window.addEventListener("contextmenu", function(event){
     contextElement.classList.add("active");
     console.log('Right mouse click')
 });
-
+window.addEventListener("click",function(){
+    this.document.getElementById("context-menu").classList.remove("active");
+    });
+    
